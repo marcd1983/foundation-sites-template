@@ -2,7 +2,7 @@
 
 @import 'settings';
 @import 'foundation';
-@import 'motion-ui';
+// @import 'motion-ui';
 
 // Global styles
 @include foundation-global-styles;
@@ -36,7 +36,7 @@
 // Containers
 @include foundation-accordion;
 @include foundation-media-object;
-@include foundation-orbit;
+// @include foundation-orbit;
 @include foundation-responsive-embed;
 @include foundation-tabs;
 @include foundation-thumbnail;
@@ -51,8 +51,8 @@
 @include foundation-off-canvas;
 @include foundation-reveal;
 @include foundation-sticky;
-@include foundation-title-bar;
-@include foundation-top-bar;
+// @include foundation-title-bar;
+// @include foundation-top-bar;
 
 // Helpers
 @include foundation-float-classes;
@@ -61,5 +61,5 @@
 // @include foundation-prototype-classes;
 
 // Motion UI
-@include motion-ui-transitions;
-@include motion-ui-animations;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;

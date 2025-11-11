@@ -1,0 +1,24 @@
+{
+    "name": "silverstripe-themes/foundation-theme",
+    "description": "zurb foundation theme for silverstripe",
+    "type": "silverstripe-theme",
+    "keywords": [
+        "silverstripe",
+        "foundation",
+        "theme"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Marcus De Leon",
+            "homepage": "http://www.marcusdeleon.com"
+        }
+    ],
+    "extra": {
+        "expose": [
+            "css",
+            "images",
+            "js"
+        ]
+    }
+}

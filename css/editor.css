@@ -1,0 +1,11 @@
+/**
+ * This support file is used to style the WYSIWYG editor in the CMS
+ */
+
+@import "app.css?2";
+
+body.mceContentBody{
+    font-size:1rem;
+    padding: 1rem;
+    margin: 1rem;
+}
