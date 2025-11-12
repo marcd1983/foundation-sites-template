@@ -2,7 +2,6 @@
 
 <main  class="main grid-container $PageWidth" role="main">
 	<% include TitleBar %>
-	<h1>BlockPage Layout</h1>
 		<% if $Content %>
 		<div class="grid-x content">
 			<div class="cell">

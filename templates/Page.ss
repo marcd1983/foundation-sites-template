@@ -6,7 +6,8 @@
 		<% include Header %>
 		$Layout
 		<% include Footer %>
-		<% include DocumentFooter %>
 	</div>
+	<div class="transition-overlay" aria-hidden="true"></div>
+	<% include DocumentFooter %>
 	</body>
 </html>
