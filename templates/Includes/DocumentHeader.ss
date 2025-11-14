@@ -18,8 +18,9 @@
   <meta name="twitter:title" content="$EffectiveOGTitle.ATT">
   <% if $EffectiveOGDescription %><meta name="twitter:description" content="$EffectiveOGDescription.ATT"><% end_if %>
   <% if $EffectiveOGImageURL %><meta name="twitter:image" content="$EffectiveOGImageURL.ATT"><% end_if %>
-  <% with SiteConfig %><% cached 'org-schema', $LastEdited %><% if $getOrganizationSchemaNode %><script type="application/ld+json">$getOrganizationSchemaNode.JSON</script><% end_if %><% end_cached %><% end_with %>
-  <% if $JsonLdScripts %><% loop $JsonLdScripts %><script type="application/ld+json">$JSON.RAW</script><% end_loop %><% end_if %>
+  <% with SiteConfig %><% cached 'org-schema', $LastEdited %><% if $getOrganizationSchemaNode %><script type="application/ld+json">$getOrganizationSchemaNode.JSON.RAW</script><% end_if %><% end_cached %><% end_with %>
   
+  <% if $JsonLdScripts %><% loop $JsonLdScripts %><script type="application/ld+json">$JSON.RAW</script><% end_loop %><% end_if %>
+
 <link rel="shortcut icon" href="$resourceURL('themes/foundation-theme/images/favicon.ico')" />
 </head>
