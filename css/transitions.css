@@ -1,66 +1,7 @@
-:root {
-  --overlay-direction: 1;               /* 1 = down, -1 = up */
-  --overlay-color: var(--gray, rgb(31, 31, 31));
-  --swup-shift: clamp(12px, 4vh, 40px); /* avoids big mobile jumps */
-  --swup-duration: 400ms;
-  --swup-ease: ease-in-out;
-}
-
-/* Reduce motion where users prefer it */
-@media (prefers-reduced-motion: reduce) {
-  html.is-changing .transition-main,
-  html.is-changing .transition-overlay {
-    transition: none !important;
-    transform: none !important;
-  }
-}
-
-/* MAIN CONTENT NUDGE */
-.transition-main {
-  will-change: transform;
-}
-
 html.is-changing .transition-main {
-  transition: transform var(--swup-duration) var(--swup-ease);
+  transition: opacity 100ms ease-in-out;
 }
 
-html.is-animating.is-leaving .transition-main {
-  transform: translate3d(0, calc(var(--overlay-direction) * var(--swup-shift)), 0);
-}
-
-html.is-animating.is-rendering .transition-main {
-  transform: translate3d(0, calc(var(--overlay-direction) * -1 * var(--swup-shift)), 0);
-}
-
-/* OVERLAY COVER */
-.transition-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  background: var(--overlay-color);
-  backdrop-filter: blur(10px);
+html.is-animating .transition-main {
   opacity: 0;
-  transform: translate3d(0, calc(-100% * var(--overlay-direction)), 0);
-  pointer-events: none;
-  will-change: transform, opacity;
 }
-
-/* enable transitions only during swup change */
-html.is-changing .transition-overlay {
-  transition:
-    transform var(--swup-duration) var(--swup-ease),
-    opacity   calc(var(--swup-duration) * 0.6) var(--swup-ease);
-  opacity: 1;
-}
-
-html.is-animating .transition-overlay {
-  transform: translate3d(0, 0, 0); /* slides in during leave */
-}
-
-html.is-rendering .transition-overlay {
-  /* slides out in the same direction (net 200%) */
-  transform: translate3d(0, calc(100% * var(--overlay-direction)), 0);
-}
-
-/* Optional helper if you want the reverse direction for certain links */
-html.to-back { --overlay-direction: -1; }
