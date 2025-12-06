@@ -77,6 +77,40 @@ address{
   z-index: 12000;
 }
 
+/* SWIPER */
+
+.swiper-button-prev,
+.swiper-button-next {
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); */
+	padding: 1rem;
+	height: 60px;
+	width: 60px;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 0.25s ease,
+		visibility 0.25s ease,
+		transform 0.25s ease;
+}
+.swiper-button-prev {
+  left: -10px;
+  transform: translateX(-40px);
+}
+.swiper-button-next {
+  right: -10px;
+  transform: translateX(40px);
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
 /* Tunables */
 :root{
   --alert-duration: 4.5s;    /* total time (pop in + hold + fade out) */

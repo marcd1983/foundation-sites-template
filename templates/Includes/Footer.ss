@@ -41,3 +41,4 @@
 		</div>
 	</div>
 </footer>
+<% include CookieConsent %>
