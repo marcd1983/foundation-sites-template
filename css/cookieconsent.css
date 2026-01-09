@@ -1,0 +1,44 @@
+body {
+	position: relative
+}
+
+.CookieConsent {
+	position: fixed;
+	z-index: 9999;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+	color: #111;
+	padding: 2rem;
+    margin: 1rem;
+    backdrop-filter: blur(20px);
+}
+
+
+.CookieConsent p{
+	font-size: 0.9rem;
+}
+
+
+.CookieConsent__title {
+	font-weight: 500;
+	font-size: 1.5rem;
+	line-height: 1.5em
+}
+
+/* .CookieConsent__bd {
+	margin-top: 1rem
+} */
+
+.CookieConsent__host-image {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap
+}

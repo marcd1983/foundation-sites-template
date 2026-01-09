@@ -23,6 +23,15 @@
   padding-bottom: 20px;
 }
 
+.element-title{
+  font-size: 1.5rem;
+  font-weight: 500;
+} 
+
+.shadow{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
  .card{
   width: 100%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
@@ -46,6 +55,11 @@
 .title-bar{
   border-bottom: solid thin;
   margin-bottom: 1.5rem;
+}
+
+.page-title{
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 address{
@@ -151,6 +165,22 @@ address{
 @media (prefers-reduced-motion: reduce){
   .toast--auto-hide{ animation: none; opacity: 1; }
 }
+
+/* HEADER */
+
+.brand-logo h1{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+.brand-logo span{
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+  display: block;
+} 
+
+/* FOOTER */
 
 .footer{
   background: #f7f7f7;

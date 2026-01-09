@@ -1,9 +1,9 @@
 <header class="header" role="banner">
 	<div class="grid-container">
-		<div class="grid-x align-justify align-middle">
+		<div class="grid-x grid-padding-x grid-padding-y align-justify align-middle">
 			<div class="cell shrink">
-				<a href="$BaseHref" class="brand-logo p=20" rel="home">
-					<span>$SiteConfig.Title</span>
+				<a href="$BaseHref" class="brand-logo flex-container flex-dir-column" rel="home">
+					<h1>$SiteConfig.Title</h1>
 					<% if $SiteConfig.Tagline %>
 					<span>$SiteConfig.Tagline</span>
 					<% end_if %>
