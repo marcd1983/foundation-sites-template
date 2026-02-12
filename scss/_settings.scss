@@ -70,8 +70,10 @@ $global-font-size: 100%;
 $global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  "primary": #111,
-  "secondary": #f7f7f7,
+  "primary": #ED4343,
+  "secondary": #44131E,
+  "light": #fff,
+  "dark": #111,
   "success": #3adb76,
   "warning": #ffae00,
   "alert": #cc4b37,
@@ -83,15 +85,15 @@ $black: #111;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Inter', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Geist', Helvetica, Roboto, Arial, sans-serif;
 $body-safe-padding: false;
 $body-antialiased: true;
-$global-margin: 1rem;
-$global-padding: 1rem;
+$global-margin: 1.125rem;
+$global-padding: 1.125rem;
 $global-position: 1rem;
 $global-weight-normal: 400;
 $global-weight-bold: 600;
-$global-radius: 4px;
+$global-radius: 8px;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -170,7 +172,7 @@ $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: 1.125rem;
 $paragraph-text-rendering: optimizeLegibility;
 $enable-code-inline: true;
 $anchor-color: $primary-color;
@@ -297,14 +299,14 @@ $breadcrumbs-item-separator-color: $medium-gray;
 
 $button-font-family: inherit;
 $button-font-weight: null;
-$button-padding: 0.85em 1em;
+$button-padding: 1.125em 1.25em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
-$button-radius: $global-radius;
+$button-radius: 100px;
 $button-border: 1px solid transparent;
 $button-hollow-border-width: 1px;
 $button-sizes: (
@@ -352,7 +354,7 @@ $callout-link-tint: 30%;
 $card-background: $white;
 $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
-$card-border: 1px solid $light-gray;
+$card-border: none;
 $card-shadow: none;
 $card-border-radius: $global-radius;
 $card-padding: $global-padding;

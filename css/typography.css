@@ -1,0 +1,261 @@
+/* typography.css
+   Fonts:
+   --font-heading: "Syne", system-ui, sans-serif;
+   --font-body: "Geist", system-ui, sans-serif;
+*/
+
+:root {
+  /* Font stacks */
+  --font-heading: "Syne", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Base sizing */
+  --text-base: 1rem;          /* 16px default */
+  --leading: 1.65;
+  --measure: 68ch;            /* readable line length */
+
+  /* Weight defaults */
+  --weight-body: 400;
+  --weight-strong: 600;
+  --weight-heading: 700;
+
+  /* Letter spacing */
+  --tracking-body: 0.0em;
+  --tracking-heading: -0.015em;
+
+  /* Scale (clamp for responsive sizing) */
+  --text-xs: clamp(0.78rem, 0.76rem + 0.10vw, 0.84rem);
+  --text-sm: clamp(0.90rem, 0.88rem + 0.12vw, 0.98rem);
+  --text-md: clamp(1.00rem, 0.96rem + 0.20vw, 1.10rem); /* base */
+  --text-lg: clamp(1.12rem, 1.04rem + 0.35vw, 1.30rem);
+  --text-xl: clamp(1.28rem, 1.12rem + 0.60vw, 1.55rem);
+
+  --h4: clamp(1.25rem, 1.12rem + 0.55vw, 1.50rem);
+  --h3: clamp(1.45rem, 1.22rem + 0.90vw, 1.90rem);
+  --h2: clamp(1.75rem, 1.35rem + 1.50vw, 2.40rem);
+  --h1: clamp(2.10rem, 1.55rem + 2.20vw, 3.10rem);
+
+  /* Vertical rhythm */
+  --space-1: 0.35em;
+  --space-2: 0.65em;
+  --space-3: 1.00em;
+  --space-4: 1.50em;
+  --space-5: 2.00em;
+}
+
+
+/* Headings */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  line-height: 1.15;
+  letter-spacing: var(--tracking-heading);
+  margin: 0 0 var(--space-2);
+  text-wrap: balance;
+}
+
+ h1 { font-size: var(--h1); }
+ h2 { font-size: var(--h2); }
+ h3 { font-size: var(--h3); }
+ h4 { font-size: var(--h4); }
+
+ h5 {
+  font-size: var(--text-xl);
+  line-height: 1.2;
+}
+
+ h6 {
+  font-size: var(--text-lg);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+}
+
+/* Lead / intro paragraph helper */
+ .lead,
+ p.lead {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+/* Paragraphs & spacing */
+ p {
+  margin: 0 0 var(--space-3);
+}
+
+/* Links */
+ a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+ a:hover {
+  text-decoration-thickness: 0.12em;
+}
+
+/* Strong / emphasis */
+ strong,
+ b {
+  font-weight: var(--weight-strong);
+}
+
+ em,
+ i {
+  font-style: italic;
+}
+
+/* Lists */
+ ul,
+ ol {
+  margin: 0 0 var(--space-3);
+  padding-left: 1.25em;
+}
+
+ li {
+  margin: 0 0 var(--space-1);
+}
+
+ li > ul,
+ li > ol {
+  margin-top: var(--space-1);
+  margin-bottom: 0;
+}
+
+/* Blockquotes */
+ blockquote {
+  margin: var(--space-4) 0;
+  padding: 0.25em 0 0.25em 1em;
+  border-left: 0.25em solid currentColor;
+  opacity: 0.95;
+}
+ blockquote p {
+  margin-bottom: var(--space-2);
+}
+ blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rule */
+ hr {
+  border: 0;
+  border-top: 1px solid currentColor;
+  opacity: 0.15;
+  margin: var(--space-5) 0;
+}
+
+/* Figures / images */
+ figure {
+  margin: var(--space-4) 0;
+}
+ figcaption {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-top: var(--space-1);
+}
+ img,
+ video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tables */
+ table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+  font-size: var(--text-sm);
+}
+ th,
+ td {
+  text-align: left;
+  padding: 0.65em 0.75em;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+ thead th {
+  font-weight: var(--weight-strong);
+}
+
+/* Code */
+ code,
+ kbd,
+ samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+ :not(pre) > code {
+  padding: 0.12em 0.32em;
+  border-radius: 0.35em;
+  background: rgba(0,0,0,0.06);
+}
+
+ pre {
+  margin: var(--space-4) 0;
+  padding: 1em 1.1em;
+  border-radius: 0.75em;
+  background: rgba(0,0,0,0.06);
+  overflow-x: auto;
+  line-height: 1.55;
+  font-size: var(--text-sm);
+}
+
+ pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Small text */
+ small {
+  font-size: var(--text-sm);
+}
+
+/* Captions / meta */
+ .meta {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+}
+
+/* Better heading spacing when a heading follows another heading */
+ h1 + h2,
+ h2 + h3,
+ h3 + h4,
+ h4 + h5,
+ h5 + h6 {
+  margin-top: var(--space-2);
+}
+
+/* If a paragraph follows a heading, tighten slightly */
+ h1 + p,
+ h2 + p,
+ h3 + p,
+ h4 + p,
+ h5 + p,
+ h6 + p {
+  margin-top: 0;
+}
+
+/* Optional: make long words/URLs behave */
+ {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
+/* Optional: nicer selection (inherits color) */
+::selection {
+  background: rgba(0,0,0,0.12);
+}
+
+/* Optional: reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}

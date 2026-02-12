@@ -3,7 +3,7 @@
     <div class="title-bar grid-x grid-padding-x grid-padding-y align-middle align-center">
         <div class="cell">
             <h1 class="page-title">$Title</h1>
-            <% include BreadCrumbs %>
+            <%-- <% include BreadCrumbs %> --%>
         </div>
     </div>
 <% end_if %>
