@@ -1,4 +1,4 @@
-<div class="cell <% if $Style %> $StyleVariant<% end_if %>">
+<div class="$ExtraClass <% if $Style %> $StyleVariant<% end_if %>">
 	<% if $Title && $ShowTitle %>
         <% with $HeadingTag %>
             <{$Me} class="element-title">$Up.Title.XML</{$Me}>

@@ -2,7 +2,7 @@
 
 	<main class="grid-container $PageWidth" role="main" id="typography sitemap">
 
-		<div class="grid-x grid-padding-x sitemap-inner">
+		<div class="grid-x grid-margin-x sitemap-inner">
 
 			<% if $Sitemap %>
 					

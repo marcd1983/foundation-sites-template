@@ -1,0 +1,145 @@
+.card-section .card-content-center{
+	align-items: center;
+  	text-align: center;
+}
+
+.card-section .card-content-left{
+	align-items: flex-start;
+  	text-align: left;
+}
+
+.card-section .card-content-right{
+	align-items: flex-end;
+  	text-align: right;
+}
+
+/* HORIZONTAL STYLES */
+
+.card.hoz-card{
+    height: auto;
+}
+.card-img-link{
+    display:block;
+    height:100%;
+}
+.card.hoz-card img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+/* COVER CARD STYLES */
+
+/* HOVER CARD */
+
+/* --- Card base --- */
+.hover-card {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+
+/* --- Background layer --- */
+.hover-card-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hover-card-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Base gradient layer (always visible) */
+.hover-card-gradient {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Bottom gradient (initial look) */
+.hover-card-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(237, 67, 67,0),
+    rgba(237, 67, 67,0.7) 50%
+  );
+}
+
+/* Top gradient (hover look) that fades in + moves up */
+.hover-card-gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(237, 67, 67,0),
+     rgba(237, 67, 67,1) 50%
+  );
+  opacity: 0;
+  transform: translateY(18px); /* starts slightly lower */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+/* --- Content overlay: centers everything as a group --- */
+.hover-card-section {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+/* --- Title starts centered, then lifts on hover --- */
+.hover-card-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom:1rem;
+  transform: translateY(40px);
+  transition: transform 0.4s ease;
+}
+.hover-card-title .sub-title{
+	font-size:1.5rem;
+}
+/* --- Hidden items slide in on hover --- */
+.card-description {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.card-cta {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+/* Hover states */
+.hover-card:hover .hover-card-title {
+  transform: translateY(0); /* move title up */
+}
+.hover-card:hover .card-description,
+.hover-card:hover .card-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hover-card:hover .hover-card-gradient::after {
+  opacity: 1;
+  transform: translateY(0);
+}

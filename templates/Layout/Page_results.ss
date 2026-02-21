@@ -1,4 +1,4 @@
-<main id="Content" class="searchResults">
+<%-- <main id="Content" class="searchResults"> --%>
     <h1>$Title</h1>
 
     <% if $Query %>
@@ -51,4 +51,4 @@
         <p>Page $Results.CurrentPage of $Results.TotalPages</p>
     </div>
     <% end_if %>
-</div>
+<%-- </div> --%>

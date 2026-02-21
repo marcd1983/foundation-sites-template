@@ -6,7 +6,12 @@
 		<div id="swup" class="transition-main">
 			<% include Header %>
 			<% include SwiperSlider %>
+			<main class="main grid-container $PageWidth" role="main">
 			$Layout
+			</main>
+			<% include UpcomingEventsSection %>
+			<% include FeaturesSection %>
+			<%-- <% include RibbonCta %> --%>
 			<% include Footer %>
 		</div>
 		<div class="transition-overlay" aria-hidden="true"></div>

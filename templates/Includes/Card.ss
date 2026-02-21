@@ -13,7 +13,7 @@
             <% end_loop %>
         <% end_if %>
     <div class="card-section">
-        <h3 class="card-title"><a <% if NewWindow = 1 %>target="_blank" rel="noopener noreferrer"<% end_if %> href="$Link">$MenuTitle</a></h3>
-        <a class="button small hollow" href="$Link" <% if NewWindow = 1 %>target="_blank"<% end_if %>>View $Title</a>
+        <h3 class="card-title">$MenuTitle</h3>
+        <a class="button small" href="$Link" <% if NewWindow = 1 %>target="_blank"<% end_if %>>View $Title</a>
     </div>
 </div>

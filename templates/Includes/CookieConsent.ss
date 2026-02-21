@@ -7,7 +7,7 @@
     <% end_if %>
     >
     <div class="grid-container">
-        <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="grid-x grid-margin-x grid-margin-y">
             <div class="cell">
                 <div class="CookieConsent__hd">
                     <h3 class="CookieConsent__title" id="cookieconsent-title">$SiteConfig.CookieConsentTitle</h3>

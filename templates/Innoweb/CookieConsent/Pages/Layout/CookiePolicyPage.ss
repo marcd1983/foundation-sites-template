@@ -1,6 +1,6 @@
 <main class="main grid-container" role="main">
  <% include TitleBar %>
-    <div class="grid-x grid-padding-x grid-padding-y">
+    <div class="grid-x grid-margin-x grid-margin-y">
         <div class="cell">
             $Content
         </div>

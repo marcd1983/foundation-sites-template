@@ -16,8 +16,8 @@
 
   /* Weight defaults */
   --weight-body: 400;
-  --weight-strong: 600;
-  --weight-heading: 700;
+  --weight-strong: 500;
+  --weight-heading: 600;
 
   /* Letter spacing */
   --tracking-body: 0.0em;
@@ -47,11 +47,23 @@
 /* Headings */
  h1,
  h2,
+ h3{
+  font-family: var(--font-heading);
+ }
+
+ h4,
+ h5,
+ h6
+{
+  font-family: var(--font-body);
+}
+
+ h1,
+ h2,
  h3,
  h4,
  h5,
  h6 {
-  font-family: var(--font-heading);
   font-weight: var(--weight-heading);
   line-height: 1.15;
   letter-spacing: var(--tracking-heading);
@@ -85,7 +97,7 @@
 
 /* Paragraphs & spacing */
  p {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-4);
 }
 
 /* Links */
@@ -145,23 +157,6 @@
   border-top: 1px solid currentColor;
   opacity: 0.15;
   margin: var(--space-5) 0;
-}
-
-/* Figures / images */
- figure {
-  margin: var(--space-4) 0;
-}
- figcaption {
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  opacity: 0.8;
-  margin-top: var(--space-1);
-}
- img,
- video {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* Tables */

@@ -1,9 +1,9 @@
 
 
-<main class="main grid-container $PageWidth" role="main">
+
     <%-- <% include TitleBar %> --%>
     
-    <div class="grid-x grid-padding-x grid-padding-y content">
+    <div class="grid-x grid-margin-x grid-margin-y content">
      <% if $Instructor.Image %>
         <div class="cell large-4">
            
@@ -24,14 +24,13 @@
         <div class="cell auto">
           <div class="flex-container align-justify align-middle">
             <div>
-             <h2 class="instructor-name">$Instructor.FirstName $Instructor.LastName</h2>
-              <p class="instructor-title">$Instructor.InstructorTitle</p>
+             <h1 class="instructor-name">$Instructor.FirstName $Instructor.LastName</h1>
             </div>
             <div>
                <a href="$Link" class="button tiny hollow">&larr; Back to Instructors</a>
             </div>
-           
           </div>
+           <h3 class="card-title">$Instructor.InstructorTitle</h3>
           <% if $Instructor.Specialties %>
             <p><strong>Specialties:</strong><br> $Instructor.Specialties</p>
           <% end_if %>
@@ -44,4 +43,3 @@
             <% if $Instructor.Bio %>$Instructor.Bio<% end_if %>
         </div>
     </div>
-</main>
