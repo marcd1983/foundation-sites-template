@@ -163,6 +163,49 @@ h1,h2,h3{
   mix-blend-mode: color-dodge;
 }
 
+/* frost */
+
+.frost{
+  /* Base glass */
+  background: rgba(255, 255, 255, 0.10);            /* glass tint */
+  /* Frost (blur) */
+  backdrop-filter: blur(18px) saturate(160%) contrast(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%) contrast(110%);
+  position: relative;
+  overflow: hidden;
+}
+/* Refraction / Splay highlight sweep */
+.frost::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(closest-side at 30% 25%,
+      rgba(255,255,255,0.55),
+      rgba(255,255,255,0.0) 60%),
+    linear-gradient(135deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.02) 40%,
+      rgba(255,255,255,0.10));
+  transform: rotate(12deg);
+  pointer-events:none;
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}
+/* Dispersion (fake chromatic edges) */
+.frost::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(255,0,120,0.10),
+      rgba(0,180,255,0.10));
+  opacity: 0.25;
+  pointer-events:none;
+  mix-blend-mode: color-dodge;
+}
+
 
  .card{
   width: 100%;
@@ -225,6 +268,15 @@ address{
 }
 
 /* HEADER */
+
+.location-header{
+  background-color: #ed4343;
+  color: #fff;
+}
+.location-header a{
+  color: #fff;
+  font-size: 0.9rem;
+}
 
 .mega-menu > ul > li a{
   font-weight: 500;

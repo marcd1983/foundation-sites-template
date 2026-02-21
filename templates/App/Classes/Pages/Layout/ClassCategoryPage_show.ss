@@ -1,4 +1,5 @@
-
+    <%-- <% include TitleBar %>
+    <% if $Content %> --%>
     <div class="grid-x grid-margin-x grid-margin-y">
         <div class="cell">
             <div class="grid-x grid-margin-x grid-margin-y">
@@ -62,29 +63,32 @@
                        
                     </div>
                      <% end_if %>
-                    <% if $ClassOffering.Days %>
-                    <p><strong>Days:</strong> $ClassOffering.Days</p>
-                    <% end_if %>
-                     <% if $ClassOffering.Semester %>
-                    <p><strong>Semester:</strong> $ClassOffering.Semester</p>
-                    <% end_if %>
-                    <% if $ClassOffering.AgeRange %>
-                    <p><strong>Age Range:</strong> $ClassOffering.AgeRange</p>
-                    <% end_if %>
-                    <% if $ClassOffering.PriceRange %>
-                    <p><strong>Price Range:</strong> $ClassOffering.PriceRange</p>
-                    <% end_if %>
-                    <% if $ClassOffering.DressCode %>
-                    <p><strong>Dress Code:</strong> $ClassOffering.DressCode</p>
-                    <% end_if %>
-                    <% if $ClassOffering.Instructors %>
-                    <p>
-                        <strong>Instructor<% if $ClassOffering.Instructors.Count > 1 %>s<% end_if %>:</strong>
-                        <% loop $ClassOffering.Instructors %>
-                            <a href="$Link">$DisplayName</a><% if not $isLast %>,<% end_if %> 
-                        <% end_loop %>
-                    </p>
-                    <% end_if %>
+                    
+                         <% if $ClassOffering.Days %>
+                        <p><strong>Days:</strong> $ClassOffering.Days</p>
+                        <% end_if %>
+                        <% if $ClassOffering.Semester %>
+                        <p><strong>Semester:</strong> $ClassOffering.Semester</p>
+                        <% end_if %>
+                        <% if $ClassOffering.AgeRange %>
+                        <p><strong>Age Range:</strong> $ClassOffering.AgeRange</p>
+                        <% end_if %>
+                        <% if $ClassOffering.PriceRange %>
+                        <p><strong>Price Range:</strong> $ClassOffering.PriceRange</p>
+                        <% end_if %>
+                        <% if $ClassOffering.DressCode %>
+                        <p><strong>Dress Code:</strong><br> $ClassOffering.DressCode</p>
+                        <% end_if %>
+                        <% if $ClassOffering.Instructors %>
+                        <p>
+                            <strong>Instructor<% if $ClassOffering.Instructors.Count > 1 %>s<% end_if %>:</strong>
+                            <% loop $ClassOffering.Instructors %>
+                                <a href="$Link">$DisplayName</a><% if not $isLast %>,<% end_if %> 
+                            <% end_loop %>
+                        </p>
+                        <% end_if %>
+                    
+                   
                 </div>
             </div>
             

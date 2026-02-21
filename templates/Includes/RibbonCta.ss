@@ -1,24 +1,29 @@
+<% require css('antlion/elemental-container:css/element-container.css') %>
 <% if $RibbonCta %>
-    <% loop $RibbonCta %>
-        <% if $isCurrent %>
-            <div class="ribbon-cta dark-gradient-bg" <% if $BackgroundImage %> style="background-image:url($BackgroundImage.URL);background-size:cover;background-position:center;background-attachment: scroll;"<% end_if %>>
-                <div class="grid-container full <% if $Overlay = 1 %>dark-overlay<% end_if %>">
-                    <div class="grid-x grid-margin-x grid-margin-y p-60">
-                        <div class="cell text-center align-middle align-center">
-                            
-                            <% if $HideTitle %>
-                            <h2>$Title</h2>
-                            <% end_if %>
-                            $Description
-                        </div>
-                        <div class="cell auto text-center">	
-                            <div class="button-group align-center gap-6">
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>	
+<% loop $RibbonCta %>
+<% if $isCurrent %>
+    <div class="ribbon-cta $MarginClasses" style="<% if $BackgroundColor %>background-color: #{$BackgroundColor};<% end_if %><% if $BackgroundImage %>background-image:url('{$BackgroundImage.URL}');background-position: center;background-size: cover;background-repeat: no-repeat;<% end_if %>">
+    <% if $HasOverlay %><div class="<% if $GlassEffect %>frost<% end_if %>" style="background-color:{$OverlayRGBA}"><% end_if %>
+        <div class="grid-container $ContainerWidthClass">
+        <div class="grid-x grid-padding-x grid-padding-y $PaddingClasses">
+            <div class="cell">
+            <% if $HideTitle %>
+                <h2>$Title</h2>
+            <% end_if %>
+                $Description
+             <% if $Links.Exists %>
+                <div class="button-group large align-center">
+                <% loop $Links %>
+                    <a class="button $CssClass $ExtraClass" href="$URL" <% if $OpenInNew %>target="_blank" rel="noopener noreferrer"<% end_if %>>$Title.XML</a>
+                <% end_loop %>
+                </div>
+            <% end_if %>    
             </div>
-        <% end_if %> 
-    <% end_loop %>
+        </div>
+        </div>
+    <% if $HasOverlay %></div><% end_if %>
+    </div>
+<% end_if %> 
+<% end_loop %>
 <% end_if %>
+

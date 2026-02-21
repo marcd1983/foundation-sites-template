@@ -1,9 +1,9 @@
 <footer class="footer" role="contentinfo">
 	<div class="grid-container nav-footer">
-		<div class="grid-x grid-margin-x grid-margin-y">
+		<div class="grid-x grid-margin-x grid-margin-y align-justify">
 			<% loop $MenuType('Footer') %>
 				<% if $MenuItems %>
-					<div class="cell large-3 small-6">
+					<div class="cell large-shrink small-6">
 						<h3>$Name</h3>
 						<div class="menu vertical">
 							<% loop $MenuItems %>
@@ -14,7 +14,7 @@
 				<% end_if %>
 			<% end_loop %>
 			<% loop Locations %>
-			<div class="cell large-3 small-6">
+			<div class="cell large-shrink small-6">
 				<h3>Contact Us</h3>
 				<%-- Address block --%>
 				<% if $LocationName || $Address || $City || $State || $Zip %>
@@ -72,7 +72,7 @@
 			</div>
 			<div class="cell large-4">
 				<div class="menu align-center">
-				<a href="https://marcusdeleon.com" class="text-center-small footer-link $LinkingMode">Theme by Marcus De Leon</a>
+				<a href="https://marcusdeleon.com" class="text-center-small footer-link $LinkingMode">Marcus De Leon Creative</a>
 				</div>
 			</div>
 		</div>

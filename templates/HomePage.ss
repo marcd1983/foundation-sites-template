@@ -11,7 +11,7 @@
 			</main>
 			<% include UpcomingEventsSection %>
 			<% include FeaturesSection %>
-			<%-- <% include RibbonCta %> --%>
+			<% include RibbonCta %>
 			<% include Footer %>
 		</div>
 		<div class="transition-overlay" aria-hidden="true"></div>
