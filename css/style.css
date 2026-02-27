@@ -1,5 +1,78 @@
+:root{
+  --alert-duration: 4.5s;    /* total time (pop in + hold + fade out) */
+  --alert-radius: 12px;
+  --alert-z: 9999;
+  --red: #ed4343;
+  --darkred: #44131E;
+  --black: #111;
+  --white: #fff;
+  
+}
+h1,h2,h3{
+  color: var(--darkred);
+}
+.txt-light{
+  color: var(--white);
+}
+.txt-dark{
+  color: var(--black);
+}
+.txt-red{
+  color: var(--red);
+}
+.txt-darkred{
+  color: var(--darkred);
+}
+.bg-red{
+  background-color: var(--red);
+}
+.bg-darkred{
+  background-color: var(--darkred);
+  color:var(--white);
+}
+
+.bg-darkred h1, .bg-darkredh2, .bg-darkred h3, .bg-darkred h4, .bg-darkred h5, .bg-darkred h6,.bg-darkred p{
+  color:var(--white);
+}
+
+.gap-4{
+  gap:4px;
+}
+
+.gap-16{
+  gap:16px;
+}
+
+.gap-20{
+  gap:20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.p-60 {
+  padding: 60px;
+}
+
+.p-80 {
+  padding: 80px;
+}
+
+.p-y-80 {
+  padding: 80px 0;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+.main{
+  margin-bottom: 2rem;
 }
 
 .grid-padding-y .grid-padding-y{
@@ -56,42 +129,6 @@ html {
   background-color: #fff;
   padding: 1.5rem 2.5rem;
   border-radius: 100px;
-}
-
-.gap-4{
-  gap:4px;
-}
-
-.gap-16{
-  gap:16px;
-}
-
-.gap-20{
-  gap:20px;
-}
-
-.p-20 {
-  padding: 20px;
-}
-
-.p-40 {
-  padding: 40px;
-}
-
-.p-60 {
-  padding: 60px;
-}
-
-.p-80 {
-  padding: 80px;
-}
-
-.p-y-80 {
-  padding: 80px 0;
-}
-
-h1,h2,h3{
-  color: #44131E;
 }
 
 .element {
@@ -327,6 +364,11 @@ address{
   background-color:rgba(255, 255, 255, 0.9);
 }
 
+/* CLASS SECTION */
+#class-section{
+  margin-bottom: 2rem;
+}
+
 /* EVENT SECTION */
 
 .event-card{
@@ -383,11 +425,7 @@ address{
 }
 
 /* Tunables */
-:root{
-  --alert-duration: 4.5s;    /* total time (pop in + hold + fade out) */
-  --alert-radius: 12px;
-  --alert-z: 9999;
-}
+
 
 /* Base alert styling + absolute center */
 .toast{

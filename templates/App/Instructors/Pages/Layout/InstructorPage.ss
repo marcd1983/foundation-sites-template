@@ -14,7 +14,7 @@
   
     <% end_if %>
     <% if $InstructorList %>
-    <div class="grid-x grid-margin-x grid-margin-y large-up-5">
+    <div class="grid-x grid-margin-x grid-margin-y large-up-5 medium-up-3 small-up-2">
         <% loop $InstructorList %>
         <div class="cell">
             <% include InstructorCard %>

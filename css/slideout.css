@@ -70,6 +70,7 @@
     padding: 1.25rem;
     display: block;
     border-bottom: solid thin gray;
+    color: #111;
 }
 
 .menu-container .accordion-menu .nested.is-accordion-submenu{

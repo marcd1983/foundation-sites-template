@@ -13,7 +13,7 @@
         </div>
     <% end_if %>
     <% if $OfferingsSorted %>
-    <div id="class-section" class="grid-x grid-margin-x grid-margin-y large-up-3 medium-up-3 small-up-1">
+    <div id="class-section" class="grid-x grid-margin-x grid-margin-y large-up-3 medium-up-3 small-up-2">
         <% loop $OfferingsSorted %>
         <div class="cell offering">
             <% include ClassCard %>
@@ -23,7 +23,7 @@
     <% end_if %>
     <% if $CategoryInstructors %>
     <h2 id="meet-instructors"class="section-title text-center">Meet the Instructors</h2>
-    <div class="grid-x grid-margin-x grid-margin-y large-up-5 medium-up-3 small-up-1">
+    <div class="grid-x grid-margin-x grid-margin-y large-up-5 medium-up-3 small-up-2">
         <% loop $CategoryInstructors %>
         <div class="cell">
             <% include InstructorCard %>
