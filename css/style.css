@@ -247,6 +247,7 @@ html {
  .card{
   width: 100%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  margin-bottom: 0;
 }
 .card-title, .accordion-title, .tabs-title a{
   font-size: 1.5rem;
@@ -366,7 +367,7 @@ address{
 
 /* CLASS SECTION */
 #class-section{
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* EVENT SECTION */
@@ -423,8 +424,6 @@ address{
 .feature-section{
   background-color: #ed4343;
 }
-
-/* Tunables */
 
 
 /* Base alert styling + absolute center */
@@ -500,12 +499,51 @@ address{
   color: #111;
 }
 .footer a:hover, .footer a:active{
- 
   color: #ed4343;
 }
 
 .sub-footer{
   padding: 20px 0;
+}
+
+.sub-footer a{
+  font-size: .9rem;
+  color: #111;
+}
+
+/* SITEMAP */
+
+#sitemap ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#sitemap ul li{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;      
+}
+#sitemap ul li a{
+  color: #111;
+  text-decoration: none;
+  transition: color .25s ease-out;
+}
+#sitemap ul li a:hover{
+  color: #ed4343;
+  
+} 
+
+#sitemap ul li ul{
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid #111;
+}
+
+#sitemap ul li ul li{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
 }
 
 

@@ -2,7 +2,7 @@
     <ul>
         <% loop Menu(1) %>
         <li class="<% if $LinkingMode == 'current' || $LinkingMode == 'section' %>active<% end_if %>">
-            <a href="$Link" title="Go to $Title.ATT">
+            <a href="$Link" title="Go to $Title.ATT" <% if $OpenInNewWindow %>target="_blank" rel="noopener noreferrer"<% end_if %>>
                 $MenuTitle
                 <% if $Children %><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M1 1L7 7L13 1" stroke="black" stroke-width="2"/></svg><% end_if %>
             </a>
@@ -10,7 +10,7 @@
             <ul class="shadow">
                 <% loop $Children %>
                 <li class="<% if $LinkingMode == 'current' || $LinkingMode == 'section' %>active<% end_if %>">
-                    <a href="$Link" title="Go to $Title.ATT">
+                    <a href="$Link" title="Go to $Title.ATT" <% if $OpenInNewWindow %>target="_blank" rel="noopener noreferrer"<% end_if %>>
                         <%-- <% if ShowPhoto %> --%>
                             <% if Photo %>
                                 <img class="mega-menu-image" src="$Photo.ScaleWidth(400).URL" alt="$PagePhoto.Title">
@@ -22,7 +22,7 @@
                     <ul>
                         <% loop $Children %>
                         <li class="<% if $LinkingMode == 'current' || $LinkingMode == 'section' %>active<% end_if %>">
-                            <a href="$Link" title="Go to $Title.ATT">$MenuTitle</a>
+                            <a href="$Link" title="Go to $Title.ATT" <% if $OpenInNewWindow %>target="_blank" rel="noopener noreferrer"<% end_if %>>$MenuTitle</a>
                         </li>
                         <% end_loop %>
                     </ul>

@@ -1,6 +1,6 @@
 <section class="page cf">
 
-	<main class="grid-container $PageWidth" role="main" id="typography sitemap">
+	<main class="grid-container $PageWidth" role="main" id="sitemap">
 
 		<div class="grid-x grid-margin-x sitemap-inner">
 

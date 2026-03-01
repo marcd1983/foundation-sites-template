@@ -52,29 +52,21 @@
 		</div>
 	</div>
 
-	<div class="sub-footer">
-		<div class="grid-x grid-margin-x grid-margin-y align-center">
-			<div class="cell large-4">
-				<div class="menu align-center">
-					<a href="$BaseHref" class="text-center-small footer-link brand" rel="home">$SiteConfig.Title</a>
-				</div>
-			</div>
-			<div class="cell large-4">
-				<% loop $MenuType('Copyright') %>
-					<div class="cell large-shrink">
-						<div class="menu align-center">
+	<div class="grid-container sub-footer">
+		<div class="grid-x grid-margin-x grid-margin-y align-justify align-middle">
+			<% loop $MenuType('Bottom Footer') %>
+				<% if $MenuItems %>
+				<div class="large-shrink small-12">
+					<div class="cell">
+						<div class="menu">
 							<% loop $MenuItems %>
-								<a href="$URL" class="text-center-small footer-link $LinkingMode">$Title</a>			
+								<a href="$URL" class="sub-footer-link $LinkingMode"<% if $NewWindow %> target="_blank" rel="noopener"<% end_if %>>$Title</a>
 							<% end_loop %>
 						</div>
 					</div>
-				<% end_loop %>
-			</div>
-			<div class="cell large-4">
-				<div class="menu align-center">
-				<a href="https://marcusdeleon.com" class="text-center-small footer-link $LinkingMode">Marcus De Leon Creative</a>
 				</div>
-			</div>
+				<% end_if %>
+			<% end_loop %>
 		</div>
 	</div>
 </footer>

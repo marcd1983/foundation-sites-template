@@ -18,12 +18,12 @@
                             <ul class="menu vertical nested tritary">
                                 <% loop Children %>
                                     <li>
-                                    <a href="$Link">$MenuTitle</a>
+                                    <a href="$Link" <% if $OpenInNewWindow %>target="_blank" rel="noopener noreferrer"<% end_if %>>$MenuTitle</a>
                                     <% if Children %>
                                         <ul class="menu vertical nested tritary">
                                             <% loop Children %>
                                                 <li>
-                                                <a href="$Link">$MenuTitle</a>
+                                                <a href="$Link" <% if $OpenInNewWindow %>target="_blank" rel="noopener noreferrer"<% end_if %>>$MenuTitle</a>
                                                 </li>
                                             <% end_loop %>
                                         </ul>
@@ -34,7 +34,7 @@
                         <% end_if %>
                     </li>
                     <% else %>
-                        <li><a href="$Link">$MenuTitle</a></li>
+                        <li><a href="$Link" <% if $OpenInNewWindow %>target="_blank" rel="noopener noreferrer"<% end_if %>>$MenuTitle</a></li>
                     <% end_if %>
                 <% end_loop %>
               </ul>
