@@ -384,7 +384,7 @@ address{
   top: 0;
   left: 0;
   object-fit: cover;
-  mix-blend-mode: soft-light;
+  /* mix-blend-mode: soft-light; */
 }
 .event-card .card-section{
   padding: 40px;
