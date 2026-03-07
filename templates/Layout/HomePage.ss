@@ -1,5 +1,6 @@
 <main class="main" role="main">
     <% include SwiperSlider %>
+    <% include HoverCardSection %>
     <div class="grid-container $PageWidth ">
         <% if $Content %>
                 <div class="grid-x content">
