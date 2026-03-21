@@ -1,18 +1,16 @@
-
-
-<main  class="main grid-container $PageWidth" role="main">
-	<% include TitleBar %>
-		<% if $Content %>
-		<div class="grid-x content">
-			<div class="cell">
-			<h1>test</h1>
-				$Content
-			</div>
-		</div>
-		<% else %>
-			$ElementalArea
-		<% end_if %>
-	<% include ChildGrid %>
+<%-- inner --%>
+<main class="main grid-container $PageWidth " role="main">
+		<% include TitleBar %>
+        <% if $Content %>
+        <div class="grid-x grid-padding-x grid-padding-y content">
+            <div class="cell">
+                $Content
+            </div>
+        </div>
+        <% else %>
+            $ElementalArea
+        <% end_if %>
+        <% include ChildGrid %>
+        $Form
+        $CommentsForm
 </main>
-$Form
-$CommentsForm

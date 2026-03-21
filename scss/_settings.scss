@@ -63,6 +63,7 @@
 @use "sass:color";
 @import 'util/util';
 
+
 // 1. Global
 // ---------
 
@@ -70,8 +71,10 @@ $global-font-size: 100%;
 $global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  "primary": #111,
-  "secondary": #f7f7f7,
+  "primary": #27337F,
+  "secondary": #45E700,
+  "light": #111,
+  "dark": #f7f7f7,
   "success": #3adb76,
   "warning": #ffae00,
   "alert": #cc4b37,
@@ -83,7 +86,7 @@ $black: #111;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Inter', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Geist', Helvetica, Roboto, Arial, sans-serif;
 $body-safe-padding: false;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -131,8 +134,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+  small: 12px,
+  medium: 12px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -141,7 +144,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Instrument Sans';
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -352,9 +355,9 @@ $callout-link-tint: 30%;
 $card-background: $white;
 $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
-$card-border: 1px solid $light-gray;
+$card-border: none;
 $card-shadow: none;
-$card-border-radius: $global-radius;
+$card-border-radius: 0;
 $card-padding: $global-padding;
 $card-margin-bottom: $global-margin;
 
@@ -889,8 +892,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  "small": 1rem,
-  "medium": 1.5rem
+  "small": 12px,
+  "medium": 12px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

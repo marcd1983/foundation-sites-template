@@ -1,17 +1,16 @@
-<main class="main" role="main">
-    <% include SwiperSlider %>
-    <div class="grid-container $PageWidth ">
+<%-- inner --%>
+<main class="main grid-container $PageWidth " role="main">
         <% if $Content %>
-                <div class="grid-x content">
-                    <div class="cell">
-                        $Content
-                    </div>
-                </div>
+        <div class="grid-x grid-padding-x grid-padding-y content">
+            <div class="cell">
+                $Content
+            </div>
+        </div>
+        test
         <% else %>
             $ElementalArea
         <% end_if %>
         <% include ChildGrid %>
         $Form
         $CommentsForm
-    </div>
 </main>

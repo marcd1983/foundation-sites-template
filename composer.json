@@ -18,7 +18,8 @@
         "expose": [
             "css",
             "images",
-            "js"
+            "js",
+            "fonts"
         ]
     }
 }

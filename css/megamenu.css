@@ -3,7 +3,7 @@
     width: 100%;
 }
 .mega-menu a{
-    color:#111;
+    color:var(--primary);
 }
 .mega-menu > ul {
     margin: 0 auto;
@@ -23,13 +23,13 @@
     display: block;
 }
 .mega-menu > ul > li:hover {
-    background: #f7f7f7;
+
 }
 .mega-menu > ul > li > ul {
+    background-color: var(--white);
     display: none;
     /* width: 100%; */
     min-width: 1280px;
-    background: #fff;
     padding: 20px;
     position: absolute;
     z-index: 100;
@@ -51,14 +51,14 @@
     width: 100%;
     aspect-ratio: 6 / 4;
     object-fit: cover;
-    border:solid 1px silver;
+    border:solid 1px var(--primary);
 }
 .mega-menu > ul > li > ul > li a {
-    color: #111;
+    color: var(--primary);
     padding: .2em 0;
     width: 95%;
     display: block;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid var(--primary);
 }
 .mega-menu > ul > li > ul > li > ul {
     display: block;
