@@ -12,7 +12,7 @@
         <% end_if %>
 
         <% if $Services %>
-            <div class="grid-x grid-padding-x grid-padding-y large-up-4 medium-up-3 small-up-2">
+            <div class="service-grid grid-x grid-padding-x grid-padding-y large-up-4 medium-up-3 small-up-2">
                 <% loop $Services %>
                 <div class="cell">
                     <% include ServiceHoverCard %>

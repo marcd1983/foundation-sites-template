@@ -1,5 +1,5 @@
 <footer class="footer" role="contentinfo">
-	<div class="grid-container nav-footer">
+	<div class="grid-container full nav-footer">
 		<div class="grid-x grid-margin-x grid-margin-y align-justify">
 			<% loop $MenuType('Footer') %>
 				<% if $MenuItems %>
@@ -32,15 +32,15 @@
 						<% if $Phone %>
 						<span class="store-location-phone">
 							<strong>Phone:</strong>
-							<a href="tel:$Phone.Plain">$Phone.XML</a>
+							<a class="footer-link" href="tel:$Phone.Plain">$Phone.XML</a>
 						</span>
 					<% end_if %>
 					</address>
 					<% if $MapLinkURL %>
-						<a class="button small hollow" href="$MapLinkURL.ATT" target="_blank" rel="noopener">View larger map</a>
+						<a class="button small hollow dark" href="$MapLinkURL.ATT" target="_blank" rel="noopener">View larger map</a>
 					<% else %>
 						<%-- Google Maps link (basic, no API key required) --%>
-						<a target="_blank" rel="noopener" class="button small hollow"
+						<a target="_blank" rel="noopener" class="button small hollow dark"
 						href="https://www.google.com/maps/search/?api=1&query=$FullAddress.URLEncode">
 						View on Google Maps
 						</a>

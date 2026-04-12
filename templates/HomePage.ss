@@ -7,7 +7,9 @@
 			<% include Header %>
 			<% include SwiperSlider %>
 			<% include ServiceSection %>
-			$Layout
+			<% include CompanySection %>
+			<% include TestimonialSection %>
+			<%-- $Layout --%>
 			<% include Footer %>
 		<% include DocumentFooter %>
 	</body>

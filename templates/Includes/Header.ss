@@ -1,50 +1,6 @@
 <header class="header" role="banner">
-	<% if $locations %>
-    <div class="location-header grid-container full">
-        <div class="grid-x">
-            <div class="cell">
-				<div class="menu align-center">
-				<% loop $Locations %>
-                
-					<a href="$Link">
-						<% if $LocationName %>
-							$LocationName.XML
-						<% end_if %>
-						<% if $Address %>
-							$Address.XML
-						<% end_if %>
-						<% if $Address2 %>
-							$Address2.XML
-						<% end_if %>
-						<% if $City || $State || $Zip %>
-							$City.XML
-							<% if $City && $State %>,
-							<% end_if %>
-							$State.XML
-						<% if $Zip %>
-							$Zip.XML
-						<% end_if %>
-						<% end_if %>
-					</a>
-					<% if $Phone %>
-					<a href="tel:$Phone.Plain">$Phone.XML</a>
-					<% end_if %>
-					<% if $FullAddress %>
-					<%-- Google Maps link (basic, no API key required) --%>
-					<a target="_blank" rel="noopener" class="" href="https://www.google.com/maps/search/?api=1&query=$FullAddress.URLEncode">
-						Get Directions
-					</a>
-					<% end_if %>
-                
-                <% end_loop %>
-				</div>
-                
-            </div>
-        </div>
-    </div>
-	<% end_if %>
     <div class="grid-container fluid">
-        <div class="grid-x grid-margin-x grid-margin-y align-justify align-middle">
+        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y align-justify align-middle">
             <div class="cell shrink">
                 <a href="$BaseHref" class="brand-logo flex-container align-middle align-center gap-20" rel="home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="109" height="31" viewBox="0 0 109 31" fill="none">
@@ -68,6 +24,50 @@
                 <% include MegaMenu %>
                 <%-- <% include MegaMega %> --%>
             </div>
+
+            <% if $Locations %>
+            <div class="cell shrink show-for-large">
+            <div class="menu align-center">
+				<% loop $Locations %>
+                    <% if $Phone %>
+					    <a href="tel:$Phone.Plain"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+  <path d="M13.9358 4.44718C12.5989 9.0054 9.0054 12.5989 4.44718 13.9358C2.32735 14.5576 0.5 12.7091 0.5 10.5V10.25C0.5 9.69772 0.949155 9.25602 1.49792 9.19372C2.26566 9.10656 3.00327 8.92004 3.69758 8.64733L5.02695 9.9767C7.18911 8.94199 8.94199 7.18912 9.9767 5.02696L8.64733 3.69759C8.92004 3.00328 9.10656 2.26567 9.19372 1.49791C9.25602 0.949155 9.69771 0.5 10.25 0.5H10.5C12.7091 0.5 14.5576 2.32735 13.9358 4.44718Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> $Phone.XML</a>
+					<% end_if %>
+					<a href="$Link" class="footer-link"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+  <path d="M1.0701 5.99778L12.3997 0.602744C13.2499 0.19789 14.1373 1.08534 13.7325 1.93554L8.33743 13.2651C7.95808 14.0617 6.80805 14.0125 6.49824 13.1863L5.19893 9.72148C5.09752 9.45106 4.88415 9.23768 4.61373 9.13627L1.14891 7.83697C0.322736 7.52715 0.273457 6.37713 1.0701 5.99778Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 
+						<%-- <% if $LocationName %>
+							$LocationName.XML
+						<% end_if %> --%>
+						<% if $Address %>
+							$Address.XML
+						<% end_if %>
+						<% if $Address2 %>
+							$Address2.XML
+						<% end_if %>
+						<% if $City || $State || $Zip %>
+							$City.XML
+							<% if $City && $State %>,
+							<% end_if %>
+							$State.XML
+						<% if $Zip %>
+							$Zip.XML
+						<% end_if %>
+						<% end_if %>
+					</a>
+					<% if $FullAddress %>
+					<%-- Google Maps link (basic, no API key required) --%>
+					<a target="_blank" rel="noopener" class="button small hollow dark" href="https://www.google.com/maps/search/?api=1&query=$FullAddress.URLEncode">
+						Get Directions
+					</a>
+					<% end_if %>
+                
+                <% end_loop %>
+            </div>
+            </div>
+            <% end_if %>
+           
             <% loop $MenuType('Registration') %>
             <div class="cell shrink">
                 <div class="menu gap-4 align-right align-middle">

@@ -13,11 +13,27 @@
   --alert-radius: 12px;
   --alert-z: 9999;
   --primary: #27337F;
+  --lg-overlay-opacity: 0.92;
   --secondary: #45E700;
   --black: #111;
   --white: #fff;
   
 }
+
+[type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"], [type="time"], [type="url"], [type="color"], textarea {
+  
+  background-color: rgba(0, 0, 0, 0.125);
+  border:0;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+  color: var(--white);
+}
+
+[type="text"]:focus, [type="password"]:focus, [type="date"]:focus, [type="datetime"]:focus, [type="datetime-local"]:focus, [type="month"]:focus, [type="week"]:focus, [type="email"]:focus, [type="number"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="time"]:focus, [type="url"]:focus, [type="color"]:focus, textarea:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
 
 .txt-light{
   color: var(--white);
@@ -39,14 +55,14 @@
   color:var(--white);
 }
 
-h1{
+h1, .h1{
   font-family: 'MangoGrotesque', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   font-size: 7.5rem;
   letter-spacing: 1.25px;
   line-height: 0.85;
 }
-h2{
+h2, .h2{
   font-family: 'MangoGrotesque', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   font-size: 5rem;
@@ -54,7 +70,7 @@ h2{
   line-height: 0.85;
 }
 
-.bg-secondary h1, .bg-secondaryh2, .bg-secondary h3, .bg-secondary h4, .bg-secondary h5, .bg-secondary h6,.bg-secondary p{
+.bg-secondary h1, .bg-secondary h2, .bg-secondary h3, .bg-secondary h4, .bg-secondary h5, .bg-secondary h6,.bg-secondary p{
   color:var(--white);
 }
 
@@ -173,55 +189,32 @@ html {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.glass{
-  /* Base glass */
-  background: rgba(255, 255, 255, 0.10);            /* glass tint */
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 2px;
-
-  /* Frost (blur) */
-  backdrop-filter: blur(18px) saturate(160%) contrast(110%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%) contrast(110%);
-
-  /* Depth (shadow + inner highlight) */
-  box-shadow:
-    0 18px 50px rgba(0,0,0,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.25);
-
-  position: relative;
-  overflow: hidden;
+/* Glass sits still — backdrop-filter composited once, never repaints */
+.glass {
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 2px;
+    backdrop-filter: blur(18px) saturate(160%) contrast(110%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%) contrast(110%);
+    box-shadow:
+        0 18px 50px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+    position: relative;
+    overflow: hidden;
+    /* Own compositing layer — backdrop-filter never triggers mid-animation */
+    transform: translateZ(0);
+    will-change: transform;
 }
-/* Refraction / Splay highlight sweep */
-.glass::before{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background:
-    radial-gradient(closest-side at 30% 25%,
-      rgba(255,255,255,0.55),
-      rgba(255,255,255,0.0) 60%),
-    linear-gradient(135deg,
-      rgba(255,255,255,0.18),
-      rgba(255,255,255,0.02) 40%,
-      rgba(255,255,255,0.10));
-  transform: rotate(12deg);
-  pointer-events:none;
-  opacity: 0.8;
-  mix-blend-mode: screen;
+
+/* Animate only the inner content, not the glass box */
+.glass-inner {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.6s ease 0.3s,
+        transform 0.6s ease 0.3s;
 }
-/* Dispersion (fake chromatic edges) */
-.glass::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,
-      rgba(255,0,120,0.10),
-      rgba(0,180,255,0.10));
-  opacity: 0.25;
-  pointer-events:none;
-  mix-blend-mode: color-dodge;
-}
+
 
 /* frost */
 
@@ -273,7 +266,7 @@ html {
 } */
  
 .card-title, .accordion-title, .tabs-title a{
-  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .promo-dates{
@@ -291,7 +284,11 @@ html {
 }
 
 .section-title{
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: 'Instrument Sans', sans-serif;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 .small-text{
@@ -331,12 +328,35 @@ address{
 
 .header{
   background-color: var(--white);
-  color: var(--white);
+  color: var(--primary);
   margin-bottom: 2rem;
 }
-
+.header svg path {
+  fill: var(--primary); /* your default color */
+}
 .HomePage .header{
   margin-bottom: 0;
+  background-color: var(--primary);
+  color: var(--white);
+}
+.HomePage .header svg path {
+  fill: var(--white); /* your default color */
+}
+
+.HomePage span{
+  color: var(--white);
+}
+
+.HomePage .mega-menu a{
+  color: var(--white);
+}
+
+.HomePage .menu a{
+  color: var(--white);
+}
+
+.HomePage .mega-menu > ul > li > ul{
+  background-color: var(--primary);
 }
 
 .location-header{
@@ -397,15 +417,20 @@ address{
   background-color:rgba(255, 255, 255, 0.9);
 }
 
+
 /* SERVICES */
 .service-section{
   background-color: var(--black);
   background-image: url('/_resources/themes/foundation-theme/images/dark-gradient-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   color: var(--white);
   padding: 4rem 0;
+}
+
+.service-grid{
+  margin-bottom: 3rem;
 }
 
  .marquee-scroller {
@@ -511,13 +536,14 @@ address{
 
     .hover-card .card-title {
         transition-delay: var(--title-delay);
-        font-size: 1.75rem;
-        font-weight: 400;
+        font-size: 1.865rem;
+        font-weight: 600;
         font-style: italic;
         text-transform: uppercase;
     }
 
     .hover-card .card-description {
+        font-weight: 400;
         transition-delay: var(--description-delay);
     }
 
@@ -543,6 +569,86 @@ address{
         --description-delay: 0.05s;
         --link-delay: 0.1s;
     }
+
+/* PARTNERS SECTION */
+#company-section{
+  background-color: var(--white);
+  /* background-image: url('/_resources/themes/foundation-theme/images/blue-gradient-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; */
+}
+
+.company-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  justify-self: stretch;
+  align-self: stretch;
+  border-right: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+
+.logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  justify-self: stretch;
+  align-self: stretch;
+  aspect-ratio: 1 / 1;
+  border-right: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+
+.logo-container:nth-child(4n) {
+  border-right: none;
+}
+
+.logo-container img{
+  aspect-ratio: 1/1;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+/* TESTIMONIAL SECTION */
+
+#testimonial-section{
+  background-color: var(--primary);
+  background-image: url('/_resources/themes/foundation-theme/images/blue-gradient-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.testimonial-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  justify-self: stretch;
+  align-self: stretch;
+  border-bottom: 1px solid var(--white);
+  color: #fff;
+}
+
+.testimonial-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  align-self: stretch;
+  justify-self: stretch;
+  align-self: stretch;
+  aspect-ratio: 1 / 1;
+  border-right: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  color: #fff;
+}
 
 
 /* FEATURES */
@@ -589,22 +695,30 @@ address{
 /* FOOTER */
 
 .footer{
-  background: var(--white);
+  background-color: var(--black);
+  background-image: url('/_resources/themes/foundation-theme/images/dark-gradient-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  color: var(--white);
   padding: 80px 140px 20px 140px;
 }
 
 .footer h3{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 .footer .footer-link{
   padding: 0;
   margin-bottom: 1.25rem;
-  color: var(--secondary);;
+  color: var(--white);
 }
 .footer a:hover, .footer a:active{
-  color: var(--primary);
+  color: var(--white);
 }
 
 .sub-footer{
@@ -613,7 +727,30 @@ address{
 
 .sub-footer a{
   font-size: .9rem;
-  color: var(--primary);
+  color: var(--white);
+}
+
+/* LOCATION PAGE */
+
+.location-card{
+  background-color: var(--primary);
+  color:var(--white);
+  height: 100%;
+  margin-bottom: 0;
+}
+.location-card a{
+  color:var(--white)
+}
+
+.message-form-card{
+  background-color: var(--primary);
+  color:var(--white);
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.message-form-card label{
+  color:var(--white)
 }
 
 /* SITEMAP */
@@ -688,6 +825,19 @@ address{
   .p-y-80 {
     padding: 60px 20px;
   }
+
+  .company-content{
+    border-right: none;
+  }
+
+  .logo-container:nth-child(1n) {
+    border-right: 1px solid var(--primary);
+  }
+
+  .testimonial-container{
+  border-right: none;
+}
+
   .footer{
     padding: 60px 20px;
   }
@@ -695,3 +845,4 @@ address{
 @media only screen and (max-width: 460px) {
 
 }
+
