@@ -4,7 +4,7 @@
     <div class="menu-panel">
         <div class="btn-contain ">
         <span class="menu-title">Menu</span>
-            <button class="menu-close-btn button small hollow light" tabindex="0" style="margin:0;">
+            <button class="menu-close-btn button small hollow secondary" tabindex="0" style="margin:0;">
                 Close X
             </button>
         </div>

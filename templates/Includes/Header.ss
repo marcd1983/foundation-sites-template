@@ -1,6 +1,6 @@
 <header class="header" role="banner">
     <div class="grid-container fluid">
-        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y align-justify align-middle">
+        <div class="grid-x grid-padding-x grid-padding-y align-justify align-middle">
             <div class="cell shrink">
                 <a href="$BaseHref" class="brand-logo flex-container align-middle align-center gap-20" rel="home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="109" height="31" viewBox="0 0 109 31" fill="none">
@@ -76,7 +76,7 @@
                         <% if $isFirst %>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M13.151 13.6315C12.8471 12.7809 12.1775 12.0294 11.2461 11.4933C10.3146 10.9573 9.1734 10.6667 7.99935 10.6667C6.8253 10.6667 5.68406 10.9573 4.75262 11.4933C3.82119 12.0294 3.15161 12.7809 2.84774 13.6315" stroke="#111111" stroke-width="2" stroke-linecap="round" />
-                            <circle cx="8.00065" cy="5.33342" r="2.66667" stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="8.00065" cy="5.33342" r="2.66667" stroke="#fff" stroke-width="2" stroke-linecap="round" />
                         </svg>
                         <% end_if %>
                         $Title
@@ -88,7 +88,7 @@
             <div class="cell shrink hide-for-large">
                 <a class="slide-out-btn" id="slideMenu01">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
-                        <path d="M0 1.5H30M0 11.5H30M0 21.5H30" stroke="#111" stroke-width="3" />
+                        <path d="M0 1.5H30M0 11.5H30M0 21.5H30" stroke="#fff" stroke-width="3" />
                     </svg>
                 </a>
             </div>
