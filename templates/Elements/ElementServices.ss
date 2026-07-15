@@ -1,4 +1,4 @@
-<% require css('antlion/elemental-card:css/card.css') %>
+<% require css('antlion/element-card:css/card.css') %>
     <% if $Title && $ShowTitle %>
         <% with $HeadingTag %>
             <{$Me} class="element-title">$Up.Title.XML</{$Me}>

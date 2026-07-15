@@ -1,5 +1,5 @@
 
-<%-- <% require css('antlion/elemental-card:css/card.css') %> --%>
+<% require css('antlion/element-card:css/card.css') %>
 <% if $Top.CardAppearance == 'Gradient' %>
     <% include GradientElementCard %>
 <% else_if $Top.CardAppearance == 'Hover' %>

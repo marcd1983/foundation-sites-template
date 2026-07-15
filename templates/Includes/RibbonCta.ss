@@ -1,4 +1,4 @@
-<% require css('antlion/elemental-container:css/element-container.css') %>
+<% require css('antlion/element-container:css/element-container.css') %>
 <% if $RibbonCta %>
 <% loop $RibbonCta %>
 <% if $isCurrent %>
