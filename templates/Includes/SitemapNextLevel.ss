@@ -1,3 +1,4 @@
+<% cached 'sitemap-level', $CurrentMember.ID, $Locale, $ID, $LastEdited %>
 <% if $AllChildren %>
 <ul class="menu vertical">
 	<% loop $AllChildren %>
@@ -10,3 +11,4 @@
 	<% end_loop %>
 </ul>
 <% end_if %>
+<% end_cached %>

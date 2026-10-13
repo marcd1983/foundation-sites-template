@@ -1,3 +1,4 @@
+<% cached 'megamenu', $CurrentMember.ID, $Locale, $CurrentPage.ID, $Menu(1).max('LastEdited'), $Menu(1).count %>
 <nav class="mega-menu hide-small-only">
     <ul>
         <% loop Menu(1) %>
@@ -13,7 +14,7 @@
                     <a href="$Link" title="Go to $Title.ATT">
                         <%-- <% if ShowPhoto %> --%>
                             <% if Photo %>
-                                <img class="mega-menu-image" src="$Photo.ScaleWidth(400).URL" alt="$PagePhoto.Title">
+                                <% include ResponsiveImage Image=$Photo.ScaleWidth(400), Alt=$PagePhoto.Title, CSSClass="mega-menu-image" %>
                             <% end_if %>
                         <%-- <% end_if %> --%>
                         $MenuTitle
@@ -35,3 +36,4 @@
         <% end_loop %>
     </ul>
 </nav>
+<% end_cached %>

@@ -1,6 +1,7 @@
 <%-- Create a new .slide-out-container for each slideout instance --%>
 <%-- each slideout container needs an id of SlideOut'Yourslidename' each slideout trigger button needs an id of slideMenu'Yourslidename' --%>
 <div id="SlideOut01" class="slide-out-container">
+<% cached 'slideout-menu', $CurrentMember.ID, $Locale, $CurrentPage.ID, $Menu(1).max('LastEdited'), $Menu(1).count %>
     <div class="menu-panel">
         <div class="btn-contain ">
         <span class="menu-title">Menu</span>
@@ -42,6 +43,7 @@
     </div>
 </div>
 
+<% end_cached %>
 <div id="SlideOut02" class="slide-out-container">
     <div class="menu-panel">
         <div class="btn-contain ">

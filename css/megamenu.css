@@ -2,6 +2,10 @@
     position: static;
     width: 100%;
 }
+.mega-nav picture,
+.mega-menu picture {
+    display: contents;
+}
 .mega-menu a{
     color:var(--primary);
 }

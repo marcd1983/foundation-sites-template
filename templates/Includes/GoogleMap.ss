@@ -1,3 +1,4 @@
+<% cached 'googlemap', $CurrentMember.ID, $Locale, $ID, $LastEdited %>
 <% if $MapEmbedURL %>
 
   <div class="responsive-embed" style="margin:0;padding-bottom:112%;">
@@ -9,3 +10,4 @@
   </div>
 
 <% end_if %>
+<% end_cached %>

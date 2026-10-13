@@ -81,9 +81,9 @@
     display: none;
 }
 
-.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after{
+/* .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after{
         border-color: #fff rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-}
+} */
 
 /* Media queries for responsive design */
 @media (max-width: 1440px) {

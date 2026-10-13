@@ -1,3 +1,4 @@
+<% cached 'testimonialsection', $CurrentMember.ID, $Locale, $Testimonies.max('LastEdited'), $Testimonies.count %>
 <div id="testimonial-section" class="bg-primary">
     <div class="grid-container full ">
         <div class="grid-x align-middle align-center">
@@ -25,3 +26,4 @@
         </div>
     </div>
 </div>
+<% end_cached %>

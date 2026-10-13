@@ -1,1 +1,1 @@
-<input $AttributesHTML<% if $RightTitle %> aria-describedby="{$Name}_right_title"<% end_if %>/>
+<input $AttributesHTML<% if $RightTitle || $Message %> aria-describedby="<% if $RightTitle %>{$Name}_right_title<% end_if %><% if $RightTitle && $Message %> <% end_if %><% if $Message %>{$Name}_message<% end_if %>"<% end_if %><% if $Message %> aria-invalid="true"<% end_if %>/>

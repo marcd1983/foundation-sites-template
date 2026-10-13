@@ -1,3 +1,4 @@
+<% cached 'navigation', $CurrentMember.ID, $Locale, $CurrentPage.ID, $Menu(1).max('LastEdited'), $Menu(1).count %>
 <nav class="main-nav" role="navigation">
 	<ul class="menu dropdown" data-dropdown-menu>
 		<% loop $Menu(1) %>
@@ -29,3 +30,4 @@
 		<% end_loop %>
 	</ul>
 </nav>
+<% end_cached %>

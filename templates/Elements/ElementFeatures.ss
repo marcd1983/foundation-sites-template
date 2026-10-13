@@ -1,3 +1,4 @@
+<% cached 'element-features', $CurrentMember.ID, $Locale, $ID, $LastEdited, $Features.max('LastEdited'), $Features.count %>
 <div class="feature-section card p-60">
         <div class="grid-x grid-margin-x grid-margin-y">
             <div class="cell">
@@ -34,3 +35,4 @@
             </div>
         </div>
 </div>
+<% end_cached %>

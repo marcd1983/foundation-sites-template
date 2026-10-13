@@ -2,7 +2,6 @@
   font-family: 'MangoGrotesque';
   src:
     url('/_resources/themes/foundation-theme/fonts/Humane-Bold.woff2') format('woff2'),
-    url('/_resources/themes/foundation-theme/fonts/Humane-Bold.woff') format('woff'),
     url('/_resources/themes/foundation-theme/fonts/Humane-Bold.otf') format('opentype');
     text-rendering: optimizeLegibility;
     font-display: swap;
@@ -33,7 +32,18 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
+.main{
+  margin-bottom: 2rem;
+}
+
+.button-group::before, .button-group::after{
+  display: initial;
+  content: initial;
+}
 
 .txt-light{
   color: var(--white);
@@ -70,12 +80,8 @@ h2, .h2{
   line-height: 0.85;
 }
 
-.bg-secondary h1, .bg-secondary h2, .bg-secondary h3, .bg-secondary h4, .bg-secondary h5, .bg-secondary h6,.bg-secondary p{
-  color:var(--white);
-}
-
-.gap-4{
-  gap:4px;
+.gap-6{
+  gap:6px;
 }
 
 .gap-16{
@@ -102,6 +108,11 @@ h2, .h2{
   padding: 80px;
 }
 
+.p-y-80 {
+  padding: 80px 0;
+}
+
+
 .mt-20 {
   margin-top: 20px;
 }
@@ -124,23 +135,6 @@ h2, .h2{
 
 .mb-60 {
   margin-bottom: 60px;
-}
-
-.p-y-80 {
-  padding: 80px 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.main{
-  margin-bottom: 2rem;
-}
-
-.grid-padding-y .grid-padding-y{
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .grid-container.fluid{
@@ -194,20 +188,15 @@ html {
   border-radius: 100px;
 }
 
-.element {
+/* .element {
   padding-bottom: 20px;
+} */
+
+.element-title{
+  font-size: 1rem;
+  font-family: 'Instrument Sans', sans-serif;
+  
 }
-
-/* .element-title{
-  font-size: 1.5rem;
-} */
-
-/* .element-carousel{
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-} */
 
 .shadow{
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
@@ -238,7 +227,6 @@ html {
         opacity 0.6s ease 0.3s,
         transform 0.6s ease 0.3s;
 }
-
 
 /* frost */
 
@@ -283,11 +271,9 @@ html {
   mix-blend-mode: color-dodge;
 }
 
- /* .card{
-  width: 100%;
+ .card{
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
-  margin-bottom: 0;
-} */
+}
 
 .card-title{
   font-size: 1.25rem;
@@ -303,7 +289,7 @@ html {
   margin-bottom: 0.5rem;
 }
 
-.title-bar{
+.page-header{
   border-bottom: solid thin;
   margin-bottom: 2rem;
 }
@@ -328,10 +314,6 @@ address{
   margin-bottom: 1.5rem;
 }
 
-.responsive-embed.panormama{
-  padding-bottom: 33.33%;
-}
-
 .media-cover{
   position: relative;
   color:white;
@@ -353,30 +335,37 @@ address{
   z-index: 12000;
 }
 
+.js-off-canvas-overlay{
+  backdrop-filter: blur(18px) saturate(160%) contrast(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%) contrast(110%);
+}
+
 /* HEADER */
 
-.header{
+header{
   background-color: var(--white);
   color: var(--primary);
+  margin-bottom: 2rem;
 
 }
-.header svg path {
+header svg path {
   fill: var(--primary); /* your default color */
 }
-.HomePage .header{
+.HomePage header{
   margin-bottom: 0;
-  background-color: var(--primary);
-  color: var(--white);
+  /* background-color: var(--primary);
+  color: var(--white); */
 }
-.HomePage .header svg path {
+
+/* .HomePage .header svg path {
   fill: var(--white); /* your default color */
-}
+} */
 
-.HomePage span{
+/* .HomePage span{
   color: var(--white);
-}
+} */
 
-.HomePage .mega-menu a{
+/* .HomePage .mega-menu a{
   color: var(--white);
 }
 
@@ -386,7 +375,7 @@ address{
 
 .HomePage .mega-menu > ul > li > ul{
   background-color: var(--primary);
-}
+} */
 
 .location-header{
   background-color: var(--black);
@@ -397,9 +386,9 @@ address{
   font-size: 0.9rem;
 }
 
-.mega-menu > ul > li a{
+/* .mega-menu > ul > li a{
   font-weight: 500;
-}
+} */
 
 /* SWIPER */
 
@@ -600,7 +589,7 @@ address{
     }
 
 /* PARTNERS SECTION */
-#company-section{
+#partner-section{
   background-color: var(--white);
   /* background-image: url('/_resources/themes/foundation-theme/images/blue-gradient-bg.jpg');
   background-repeat: no-repeat;
@@ -608,7 +597,7 @@ address{
   background-position: center top; */
 }
 
-.company-content{
+.partner-content{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -679,13 +668,11 @@ address{
   color: #fff;
 }
 
-
 /* FEATURES */
 
 .feature-section{
   background-color: var(--primary);
 }
-
 
 /* Base alert styling + absolute center */
 .toast{
@@ -849,13 +836,13 @@ address{
     margin:0 20px;
   }
   .p-40, .p-60, .p-80 {
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
   .p-y-80 {
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
 
-  .company-content{
+  .partner-content{
     border-right: none;
   }
 

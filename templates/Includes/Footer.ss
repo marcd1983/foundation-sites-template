@@ -1,6 +1,8 @@
 <footer class="footer" role="contentinfo">
 	<div class="grid-container full nav-footer">
 		<div class="grid-x grid-margin-x grid-margin-y align-justify">
+		
+			<% cached 'footer-menu', $CurrentMember.ID, $Locale, $MenuType('Footer').max('LastEdited'), $MenuType('Footer').count %>
 			<% loop $MenuType('Footer') %>
 				<% if $MenuItems %>
 					<div class="cell large-shrink small-6">
@@ -13,6 +15,9 @@
 					</div>
 				<% end_if %>
 			<% end_loop %>
+			<% end_cached %>
+
+			<% cached 'footer-locations', $CurrentMember.ID, $Locale, $Locations.max('LastEdited'), $Locations.count %>
 			<% loop Locations %>
 			<div class="cell large-shrink small-6">
 				<h3>Contact Us</h3>
@@ -49,11 +54,13 @@
 				<% end_if %>
 			</div>
 			<% end_loop %>
+			<% end_cached %>
 		</div>
 	</div>
 
 	<div class="grid-container sub-footer">
 		<div class="grid-x grid-margin-x grid-margin-y align-justify align-middle">
+			<% cached 'footer-bottom', $CurrentMember.ID, $Locale, $MenuType('Bottom Footer').max('LastEdited'), $MenuType('Bottom Footer').count %>
 			<% loop $MenuType('Bottom Footer') %>
 				<% if $MenuItems %>
 				<div class="large-shrink small-12">
@@ -67,6 +74,7 @@
 				</div>
 				<% end_if %>
 			<% end_loop %>
+			<% end_cached %>
 		</div>
 	</div>
 </footer>

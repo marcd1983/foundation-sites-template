@@ -8,8 +8,8 @@
 
     <% if $ServiceList %>
         <% if $Appearance = 'Carousel' %>
-            <% include ServiceCarousel %>
+            <% include Includes/service/ServiceCarousel %>
         <% else %>
-            <% include ServiceGrid %>
+            <% include Includes/service/ServiceGrid %>
         <% end_if %>    
     <% end_if %>

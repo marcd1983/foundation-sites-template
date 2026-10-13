@@ -1,3 +1,4 @@
+<% cached 'servicecard', $CurrentMember.ID, $Locale, $ID, $LastEdited %>
 <div class="card service-card">
     <% if $ServiceImage %>
     <% loop $ServiceImage %>
@@ -5,7 +6,7 @@
         <picture>
             <source media="(min-width:1024px)" srcset="<% if function_exists('FocusFill') %>$FocusFill(600,600).URL<% else %>$Fill(600,600).URL<% end_if %>">
             <source media="(max-width:1023px)" srcset="<% if function_exists('FocusFill') %>$FocusFill(600,600).URL<% else %>$Fill(600,600).URL<% end_if %>">
-            <img src="<% if function_exists('FocusFill') %>$FocusFill(600,600).URL<% else %>$ScaleMaxWidth(600).URL<% end_if %>" alt="Title.ATT" width="600" height="600" style="width:100%;height:auto;">
+            <img src="<% if function_exists('FocusFill') %>$FocusFill(600,600).URL<% else %>$ScaleMaxWidth(600).URL<% end_if %>" alt="$Title.ATT" width="600" height="600" style="width:100%;height:auto;">
         </picture>
     </a>
     <% end_loop %>
@@ -18,3 +19,4 @@
         <p><a class="button" href="$Link">View Service</a></p>
     </div>
 </div>
+<% end_cached %>

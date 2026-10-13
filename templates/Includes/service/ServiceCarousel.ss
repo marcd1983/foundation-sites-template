@@ -1,3 +1,4 @@
+<% cached 'servicecarousel', $CurrentMember.ID, $Locale, $ID, $LastEdited, $ServiceList.max('LastEdited'), $ServiceList.count %>
 
 <% if $Title && $ShowTitle %>
     <% with $HeadingTag %>
@@ -14,7 +15,7 @@
     <div class="swiper-wrapper">
       <% loop $ServiceList.Sort(SortOrder) %>
         <div class="swiper-slide">
-            <% include ServiceHoverCard %>
+            <% include Includes/service/ServiceHoverCard %>
         </div>
       <% end_loop %>
     </div>
@@ -34,3 +35,4 @@ document.addEventListener('DOMContentLoaded', function(){
   new Swiper(el, options);
 });
 </script>
+<% end_cached %>

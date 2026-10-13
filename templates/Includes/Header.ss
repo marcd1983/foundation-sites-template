@@ -25,6 +25,7 @@
                 <%-- <% include MegaMega %> --%>
             </div>
 
+            <% cached 'header-locations', $CurrentMember.ID, $Locale, $Locations.max('LastEdited'), $Locations.count %>
             <% if $Locations %>
             <div class="cell shrink show-for-large">
             <div class="menu align-center">
@@ -67,8 +68,10 @@
             </div>
             </div>
             <% end_if %>
+            <% end_cached %>
            
-            <% loop $MenuType('Registration') %>
+            <% cached 'header-registration', $CurrentMember.ID, $Locale, $MenuType('Registration').max('LastEdited'), $MenuType('Registration').count %>
+            <% loop $MenuType('Download') %>
             <div class="cell shrink">
                 <div class="menu gap-4 align-right align-middle">
                     <% loop $MenuItems %>
@@ -85,6 +88,7 @@
                 </div>
             </div>
             <% end_loop %>
+            <% end_cached %>
             <div class="cell shrink hide-for-large">
                 <a class="slide-out-btn" id="slideMenu01">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">

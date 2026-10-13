@@ -1,3 +1,4 @@
+<% cached 'element-content', $CurrentMember.ID, $Locale, $ID, $LastEdited %>
 <div class="cell <% if $Style %> $StyleVariant<% end_if %>">
 	<% if $Title && $ShowTitle %>
         <% with $HeadingTag %>
@@ -6,3 +7,4 @@
     <% end_if %>
     $HTML
 </div>
+<% end_cached %>

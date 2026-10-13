@@ -1,5 +1,5 @@
 <main class="main grid-container" role="main">
- <% include TitleBar %>
+<% include PageHeader %>
     <div class="grid-x grid-padding-x grid-padding-y">
         <div class="cell">
             $Content
@@ -9,6 +9,7 @@
             $Form
             <br>
             <% if $SiteConfig.CookieGroups %>
+            <% cached 'cookiepolicy-groups', $CurrentMember.ID, $Locale, $SiteConfig.LastEdited, $SiteConfig.CookieGroups.max('LastEdited'), $SiteConfig.CookieGroups.count %>
                 <h3 class="card-title"><%t Innoweb\\CookieConsent\\Pages\\CookiePolicyPage.CookiesUsed 'Cookies used on this website' %></h3>
                 <div class="callout">
                     <% loop $SiteConfig.CookieGroups %>
@@ -36,6 +37,7 @@
                         </table>
                     <% end_loop %>
                 </div>
+            <% end_cached %>
             <% end_if %>
             $FooterContent
         </div>

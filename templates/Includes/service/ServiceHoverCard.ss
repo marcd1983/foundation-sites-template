@@ -1,3 +1,4 @@
+<% cached 'servicehovercard', $CurrentMember.ID, $Locale, $ID, $LastEdited %>
 <a class="card hover-card <% if $InSection('home') %>reverse<% end_if %>" href="$Link">
     <% if $ServiceImage %>
         <div class="zoom">
@@ -15,4 +16,5 @@
 </svg></span>
     </div>
 </a>
+<% end_cached %>
 

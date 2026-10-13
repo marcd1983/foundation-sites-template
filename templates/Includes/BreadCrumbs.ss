@@ -1,5 +1,7 @@
+<% cached 'breadcrumbs', $CurrentMember.ID, $Locale, $CurrentPage.ID, $CurrentPage.LastEdited %>
 <% if $Level(2) %>
-	<div id="Breadcrumbs" class="breadcrumbs">
+	<div id="Breadcrumbs">
 	   	$Breadcrumbs
 	</div>
 <% end_if %>
+<% end_cached %>

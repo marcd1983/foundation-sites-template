@@ -1,16 +1,9 @@
 <%-- inner --%>
-<main class="main grid-container $PageWidth " role="main">
-        <% if $Content %>
-        <div class="grid-x grid-padding-x grid-padding-y content">
-            <div class="cell">
-                $Content
-            </div>
-        </div>
-        test
-        <% else %>
-            $ElementalArea
-        <% end_if %>
-        <% include ChildGrid %>
-        $Form
-        $CommentsForm
-</main>
+<div class="grid-container $PageWidth " role="main">
+       <div class="grid-x grid-margin-x grid-margin-y align-justify mb-20 gap-20">
+           <main class="main cell large-<% if SidebarPosition == 'none' %>12<% else %>auto<% end_if %> <% if SidebarPosition == 'right' %> large-order-1 small-order-1<% end_if %> <% if SidebarPosition == 'left' %> large-order-0 small-order-1<% end_if %>">
+               $ElementalArea
+           </main>
+       </div>
+</div>
+

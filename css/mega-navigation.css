@@ -1,0 +1,283 @@
+:root {
+  --mega-nav-height: 60px;
+}
+
+@media (min-width: 64rem) {
+  :root { --mega-nav-height: 72px; }
+}
+
+a { color: var(--primary); }
+
+.mega-nav picture { display: contents; }
+
+/* -------------------------------- header shell -------------------------------- */
+.mega-nav {
+  position: relative;
+  z-index: 3;
+  height: var(--mega-nav-height);
+  background-color: #fefefe;
+  box-shadow: inset 0 -1px 0 rgba(10, 10, 10, 0.1);
+}
+
+.mega-nav__logo {
+  display: block;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+}
+
+/* Foundation's title-bar defaults to a dark bar; make it match the header */
+.title-bar {
+  background: #fefefe;
+  color: inherit;
+  padding: 0 1.5rem;
+  height: var(--mega-nav-height);
+}
+.title-bar-title { color: inherit; font-weight: 400; }
+.title-bar-right { display: flex; justify-content: flex-end; align-items: center; gap: 0.25rem; }
+
+.mega-nav__actions { display: flex; align-items: center; gap: 0.5rem; }
+.mega-nav__btn { margin: 0; }
+
+/* -------------------------------- icon buttons (Foundation has .button, not a round icon button) -------------------------------- */
+.mega-nav__icon-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+  color: #111;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mega-nav__icon-btn:hover,
+.mega-nav__icon-btn.mega-nav__icon-btn--state-b {
+  background-color: rgba(10, 10, 10, 0.05);
+}
+
+.mega-nav__icon-btn .icon { display: block; }
+.mega-nav__icon-btn .icon__group { stroke-width: 1px; }
+.mega-nav__icon-btn .icon__group > * {
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), stroke-dashoffset 0.3s, opacity 0.3s;
+}
+
+/* animated hamburger -> "x" */
+.mega-nav__icon-btn--menu .icon__group > * { stroke-dasharray: 24; }
+.mega-nav__icon-btn--menu .icon__group > *:nth-child(1) { transform-origin: 12px 6px; }
+.mega-nav__icon-btn--menu .icon__group > *:nth-child(3) { transform-origin: 12px 18px; }
+.mega-nav__icon-btn--menu.mega-nav__icon-btn--state-b .icon__group > *:nth-child(1) { transform: translateY(6px) rotate(-45deg); }
+.mega-nav__icon-btn--menu.mega-nav__icon-btn--state-b .icon__group > *:nth-child(2) { stroke-dashoffset: 24; }
+.mega-nav__icon-btn--menu.mega-nav__icon-btn--state-b .icon__group > *:nth-child(3) { transform: translateY(-6px) rotate(45deg); }
+
+/* animated search icon -> "x" */
+.mega-nav__icon-btn--search .icon__group {
+  transform-origin: 12px 12px;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.mega-nav__icon-btn--search .icon__group > *:nth-child(1) { stroke-dashoffset: 34; stroke-dasharray: 24; }
+.mega-nav__icon-btn--search .icon__group > *:nth-child(2) { stroke-dashoffset: 24; stroke-dasharray: 24; }
+.mega-nav__icon-btn--search .icon__group > *:nth-child(3) {
+  transform-origin: 9.5px 9.5px; transform: rotate(45deg);
+  stroke-dashoffset: 84; stroke-dasharray: 42; opacity: 1;
+}
+.mega-nav__icon-btn--search.mega-nav__icon-btn--state-b .icon__group { transform: rotate(-90deg); }
+.mega-nav__icon-btn--search.mega-nav__icon-btn--state-b .icon__group > *:nth-child(1) { stroke-dashoffset: 48; }
+.mega-nav__icon-btn--search.mega-nav__icon-btn--state-b .icon__group > *:nth-child(2) { stroke-dashoffset: 48; }
+.mega-nav__icon-btn--search.mega-nav__icon-btn--state-b .icon__group > *:nth-child(3) { stroke-dashoffset: 42; opacity: 0; }
+
+.mega-nav__label {
+  display: block;
+  color: #585858;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* -------------------------------- Foundation Dropdown Menu (desktop mega nav) -------------------------------- */
+
+.mega-nav__menu.dropdown.menu {
+  position: static; /* lets the mega-menu submenu size itself against .mega-nav below */
+}
+
+.mega-nav__menu.dropdown.menu .is-active > a {
+  background: none;
+}
+
+/* Foundation makes every .is-dropdown-submenu-parent li "position: relative",
+   which would size a width:100% mega-menu to that single <li> instead of the
+   header. Un-set it just for the items that hold a .mega-menu panel (marked
+   with .mega-nav__mega-parent in the markup) so that panel positions against
+   .mega-nav (position: relative, set above) instead. Plain submenus, like
+   "Support", keep the default relative-to-its-own-<li> behaviour. */
+.mega-nav__menu.dropdown.menu > li.mega-nav__mega-parent {
+  position: static;
+}
+
+.mega-nav__menu.dropdown.menu > li > a {
+  height: var(--mega-nav-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  color: #111;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.mega-nav__menu.dropdown.menu > li:hover > a,
+.mega-nav__menu.dropdown.menu > li.is-active > a,
+.mega-nav__menu.dropdown.menu > li.opens-bottom > a {
+  background: rgba(10, 10, 10, 0.05);
+}
+
+/* Foundation's dropdown-menu JS only toggles the "js-dropdown-active" class;
+   the show/hide itself is done in its base CSS with display:none/block,
+   which can't be transitioned. Take over that display toggle here with
+   opacity + transform so open/close can animate smoothly. */
+.mega-nav__menu .is-dropdown-submenu {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s;
+}
+
+.mega-nav__menu .is-dropdown-submenu.js-dropdown-active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: opacity 0.28s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.28s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* mega-menu panel: a nested <ul class="menu mega-menu"> stretched full width
+   of the header, holding a single <li> of free-form content */
+.is-dropdown-submenu.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  background-color: #fefefe;
+  box-shadow: 0 28px 40px -1px rgba(10, 10, 10, 0.1);
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mega-nav__menu .is-dropdown-submenu,
+  .mega-nav__menu .is-dropdown-submenu.js-dropdown-active {
+    transition: none;
+    transform: none;
+  }
+}
+
+.is-dropdown-submenu.mega-menu > li {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+/* the mega-menu content sits inside a Foundation <ul class="menu">, whose
+   ".menu a{display:block}" rule would otherwise stretch buttons full-width
+   -- restore normal button sizing for buttons used inside a mega-menu panel */
+.is-dropdown-submenu.mega-menu .button {
+  display: inline-block;
+  padding: 0.85em 1em;
+}
+
+/* a plain (non-mega) dropdown submenu, e.g. "Support" */
+.dropdown.menu .is-dropdown-submenu:not(.mega-menu) {
+  min-width: 220px;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(10, 10, 10, 0.08);
+}
+
+/* -------------------------------- vertical tabs (Products layout) -------------------------------- */
+.mega-nav__tabs.tabs.vertical { border: 0; background: transparent; }
+.mega-nav__tabs .tabs-title { margin-bottom: 0.25rem; }
+.mega-nav__tabs .tabs-title > a { border-radius: 6px; background: transparent; }
+.mega-nav__tabs .tabs-title > a:hover,
+.mega-nav__tabs .tabs-title > a[aria-selected="true"] {
+  background: rgba(10, 10, 10, 0.05);
+  color: var(--primary);
+}
+
+.mega-nav__tabs-avatar {
+  width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+  margin-right: 0.5rem; vertical-align: middle;
+}
+
+.mega-nav__tabs-content.tabs-content { border: 0; background: transparent; }
+
+/* shared CTA links under the vertical tab list (Page.Links, Tabs layout only) */
+.mega-nav__tabs-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e6e6e6;
+}
+.mega-nav__tabs-links .button { margin: 0; }
+
+.mega-nav__tabs-img {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.3s;
+}
+.mega-nav__tabs-img:hover { opacity: 0.85; }
+.mega-nav__tabs-img img { width: 100%; }
+
+/* -------------------------------- cards ("browse all" + Gallery layout) -------------------------------- */
+.mega-nav__card-media {
+  padding:0px;
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.mega-nav__card-media img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
+.mega-nav__card:hover .mega-nav__card-media img { opacity: 0.85; }
+
+.mega-nav__card-title {
+  display: block;
+  margin-top: 1rem;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+.mega-nav__card-title:hover { text-decoration: underline; }
+
+.mega-nav__sub-list.menu.vertical > li:not(:last-child) { margin-bottom: 1rem; }
+.mega-nav__sub-list.menu.vertical a { padding: 0; color: #111; }
+.mega-nav__sub-list.menu.vertical a:hover { text-decoration: underline; background: transparent; }
+
+
+/* -------------------------------- off-canvas (mobile nav) -------------------------------- */
+
+.mega-nav__mobile-menu.accordion-menu { padding: 1rem; }
+.mega-nav__mobile-menu.accordion-menu a:not(.button) { color: #111; font-size: 1.125rem; }
+.mega-nav__mobile-menu.accordion-menu > li { border-bottom: 1px solid #e6e6e6; }
+.mega-nav__mobile-menu.accordion-menu .nested a { font-size: 1rem; }
+.mega-nav__mobile-menu.accordion-menu .mega-nav__label { margin-top: 1rem; }
+
+.mega-nav__mobile-avatar {
+  width: 28px; height: 28px; border-radius: 50%; object-fit: cover;
+  margin-right: 0.5rem; vertical-align: middle;
+}
+
+.mega-nav__mobile-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}

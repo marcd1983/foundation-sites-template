@@ -1,3 +1,4 @@
+<% cached 'servicesection', $CurrentMember.ID, $Locale, $HomeServicesAsc.max('LastEdited'), $HomeServicesAsc.count, $HomeServicesDesc.max('LastEdited'), $HomeServicesDesc.count %>
 <div class="service-section">
 <div class="grid-container fluid">
 <div class="grid-x grid-padding-x grid-padding-y">
@@ -14,7 +15,7 @@
             <div class="swiper-wrapper">
                 <% loop $HomeServicesAsc %>
                     <div class="swiper-slide">
-                        <% include ServiceHoverCard %>
+                        <% include Includes/service/ServiceHoverCard %>
                     </div>
                 <% end_loop %>
             </div>
@@ -25,7 +26,7 @@
                 <div class="swiper-wrapper">
                     <% loop $HomeServicesDesc %>
                         <div class="swiper-slide text-left">
-                            <% include ServiceHoverCard %>
+                            <% include Includes/service/ServiceHoverCard %>
                         </div>
                     <% end_loop %>
                 </div>
@@ -34,3 +35,4 @@
     </div>
 </div>
 </div>
+<% end_cached %>

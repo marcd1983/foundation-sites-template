@@ -1,5 +1,5 @@
 <main class="main grid-container $PageWidth " role="main">
-    <% include TitleBar %>
+    <% include PageHeader %>
     <% if $Content %>
     <div class="grid-x content">
         <div class="cell">
@@ -9,6 +9,7 @@
     <% else %>
     $ElementalArea
     <% end_if %>
+    <% cached 'storelocation-info', $CurrentMember.ID, $Locale, $CurrentPage.ID, $CurrentPage.LastEdited %>
     <div class="grid-x grid-margin-x grid-margin-y" style="margin-bottom: 2rem;">
 
         <div class="cell small-12 medium-4">
@@ -60,6 +61,7 @@
                    <% include GoogleMap %>
             </div>
         </div>
+        <% end_cached %>
         <div class="cell small-12 medium-4">
             <div class="card message-form-card shadow">
                 <div class="card-section p-40">
@@ -72,10 +74,13 @@
 
     </div>
     
+    <% cached 'storelocation-schedule', $CurrentMember.ID, $Locale, $CurrentPage.ID, $CurrentPage.LastEdited %>
     <% include StoreSchedule %>
     <% include Departments %>
+    <% end_cached %>
     <%-- LocalBusiness JSON-LD. Adjust @type to your niche (e.g., "HardwareStore", "AutoPartsStore"). --%>
 </main>
+<% cached 'storelocation-jsonld', $CurrentMember.ID, $Locale, $CurrentPage.ID, $CurrentPage.LastEdited %>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -97,3 +102,4 @@
     "url": "$AbsoluteLink"
 }
 </script>
+<% end_cached %>

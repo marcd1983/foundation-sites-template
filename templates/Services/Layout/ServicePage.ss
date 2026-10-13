@@ -1,5 +1,5 @@
 <main class="main grid-container $PageWidth " role="main">
-		<% include TitleBar %>
+		<% include PageHeader %>
         <% if $Content %>
         <div class="grid-x grid-padding-x grid-padding-y content">
             <div class="cell">
