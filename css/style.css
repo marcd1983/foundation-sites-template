@@ -102,6 +102,30 @@ h2, .h2{
   padding: 80px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
 .p-y-80 {
   padding: 80px 0;
 }
@@ -334,7 +358,7 @@ address{
 .header{
   background-color: var(--white);
   color: var(--primary);
-  margin-bottom: 2rem;
+
 }
 .header svg path {
   fill: var(--primary); /* your default color */
