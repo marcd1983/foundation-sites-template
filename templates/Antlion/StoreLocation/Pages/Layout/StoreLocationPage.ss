@@ -81,25 +81,5 @@
     <%-- LocalBusiness JSON-LD. Adjust @type to your niche (e.g., "HardwareStore", "AutoPartsStore"). --%>
 </main>
 <% cached 'storelocation-jsonld', $CurrentMember.ID, $Locale, $CurrentPage.ID, $CurrentPage.LastEdited %>
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "$Title.XML",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "$Address.XML<% if $Address2 %>, $Address2.XML<% end_if %>",
-        "addressLocality": "$City.XML",
-        "addressRegion": "$State.XML",
-        "postalCode": "$Zip.XML"
-    },
-    <% if $Phone %>
-    "telephone": "$Phone.Plain",
-    <% end_if %>
-    <% if $Email %>
-    "email": "$Email.XML",
-    <% end_if %>
-    "url": "$AbsoluteLink"
-}
-</script>
+<script type="application/ld+json">$LocalBusinessSchemaJSON.RAW</script>
 <% end_cached %>
